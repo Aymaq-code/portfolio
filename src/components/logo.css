@@ -1,0 +1,26 @@
+/* Logo Styles */
+.logo {
+  color: var(--color-grey-light-1);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1001;
+  z-index: 1000;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  animation: fadeDown 0.5s ease-out;
+}
+
+.logo:hover {
+  color: var(--color-tertiary);
+}
+.logo__image {
+  font-size: 3rem;
+}
+
+.logo__text {
+  font-size: 3rem !important;
+  font-weight: 800;
+  font-size: inherit;
+}

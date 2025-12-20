@@ -1,0 +1,163 @@
+.projects {
+  padding: 10rem 0;
+}
+
+.projects__content {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 35px;
+  align-items: start;
+}
+
+/* Cart 1 - Intro section */
+.projects__content > div:first-child {
+  grid-column: 1 / -1;
+  padding: 3rem 4rem;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.projects__content > div:first-child > p:first-of-type {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.projects__content > div:first-child > h2 {
+  font-weight: 800;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  word-spacing: -3px;
+  line-height: 1.3;
+  color: var(--color-grey-dark-1);
+  margin: 0;
+}
+
+.projects__content > div:first-child > p:first-of-type,
+.projects__content > div:first-child > h2,
+.projects__content > div:first-child > p:nth-child(3),
+.projects__content button {
+  animation: fadeUp 0.8s ease both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 25%;
+  will-change: transform, opacity;
+}
+
+/* Project cards (items 2, 3, 4) */
+.projects__content > div:not(:first-child) {
+  background: white;
+  box-shadow: var(--shadow-md);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.projects__content > div:not(:first-child):hover {
+  transform: translateY(-5px);
+  box-shadow: none;
+}
+
+.projects__content > div:not(:first-child) > div:first-child {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.projects__content > div:not(:first-child) > div:first-child > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.projects__content > div:not(:first-child):hover > div:first-child > img {
+  transform: scale(1.05);
+}
+
+.projects__content > div:not(:first-child) > div:nth-child(2) {
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.projects__content > div:not(:first-child) > div:nth-child(2) p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-grey-dark-1);
+  margin: 0;
+}
+
+.slideInLeft {
+  animation: flipIn 1s ease both;
+}
+.slideInRight {
+  animation: flipIn 1s ease both;
+}
+.slideInLeft,
+.slideInRight {
+  animation-timeline: view();
+  animation-range: entry 10% cover 25%;
+  will-change: transform, opacity;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .projects__content {
+    max-width: 90rem;
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects__content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .projects__content > div:first-child {
+    padding: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .projects__content > div:first-child > h2 {
+    font-size: 2.4rem;
+  }
+
+  .projects__content > div:not(:first-child) {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .projects__content {
+    padding: 0 1.5rem;
+    gap: 20px;
+  }
+
+  .projects__content > div:first-child > h2 {
+    letter-spacing: 1px;
+  }
+
+  .projects__content button {
+    margin-bottom: 0.5rem;
+  }
+}
