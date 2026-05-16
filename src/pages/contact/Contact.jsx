@@ -23,17 +23,17 @@ function Contact() {
         "service_o9xghl5",
         "template_rsd9y2t",
         formRef.current,
-        "JzM5u-G63Uj3JULrQ"
+        "JzM5u-G63Uj3JULrQ",
       )
       .then(
-        (result) => {
+        () => {
           alert("Message sent succefuly ✅");
           formRef.current.reset();
         },
         (error) => {
           alert("Message not sent ❌");
           console.log(error.text);
-        }
+        },
       );
   }
 

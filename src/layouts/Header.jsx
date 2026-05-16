@@ -12,19 +12,32 @@ function Header() {
 
   // Close menu when resizing to larger screens
   useEffect(() => {
-    dispatch(handleResize());
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    const handleResizeWrapper = () => dispatch(handleResize());
+    handleResizeWrapper();
+    window.addEventListener("resize", handleResizeWrapper);
+    return () => window.removeEventListener("resize", handleResizeWrapper);
+  }, [dispatch]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (openMenu) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+    return () => {
+      document.body.classList.remove("menu-open");
+    };
+  }, [openMenu]);
 
   return (
-    <nav className={!openMenu ? "nav" : "nav nav--open"}>
+    <nav className="nav">
       <Logo />
       <ToggleBtn />
 
       <div
         className={`nav__overlay ${openMenu ? "nav__overlay--visible" : ""}`}
-        onClick={() => openMenu(false)}></div>
+        onClick={() => dispatch(handleLinkClick())}></div>
 
       <ul className={`nav__list ${openMenu ? "nav__list--open" : ""}`}>
         <li>

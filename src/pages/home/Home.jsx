@@ -1,5 +1,6 @@
 import MY_IMG from "../../assets/img/myImg.webp";
 import SCR_IMG from "../../assets/img/homeAfter.webp";
+import MY__CV from "/resume.pdf";
 import Button from "../../components/Button";
 import Projects from "../../components/Projects";
 import Services from "../../components/Services";
@@ -26,9 +27,11 @@ function Home() {
             </p>
           </div>
           <div className="left_footer">
-            <Button type="primary" size="lg">
-              Download CV
-            </Button>
+            <a href={MY__CV} download="Rashid-Aymaq-CV.pdf">
+              <Button type="primary" size="lg">
+                Download CV
+              </Button>
+            </a>
           </div>
         </section>
 
